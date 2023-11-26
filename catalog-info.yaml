@@ -1,0 +1,22 @@
+#
+# ATENÇÃO: Não apague esse arquivo
+# Ele é usado pelo time do gb.tech para termos o catalogo dinâmico de aplicações
+#
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 'jest-scafflater'
+  description: 'Jest Matchers to test Scafflater results.'
+  tags:
+    - 'jest'
+    - 'scafflater'
+  annotations:
+    github.com/project-slug: 'grupoboticario/jest-scafflater'
+    github.com/team-slug: 'grupoboticario/alquimia'
+spec:
+  type: service
+  lifecycle: 'production'
+  owner: 'alquimia'
+  system: 'alquimia'
+  domain: 'platform-engineering'
