@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "commonjs",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "test:dev": "jest --detectOpenHandles --collectCoverage --runInBand --verbose --forceExit",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/jest": "26.0.23",
-    "doctoc": "2.0.1",
+    "doctoc": "2.2.1",
     "eslint": "7.32.0",
     "eslint-config-oclif": "4.0.0",
     "eslint-config-prettier": "8.3.0",
