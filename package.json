@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/scafflater/jest-scafflater#readme",
   "dependencies": {
-    "dir-compare": "3.3.0",
+    "dir-compare": "4.2.0",
     "fs-extra": "10.0.0",
     "jest": "27.2.5",
     "jest-matcher-utils": "27.2.5",
