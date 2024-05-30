@@ -1,3 +1,5 @@
+# Jest Matchers for Scafflater
+
 Jest Matchers to test generated templates.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -11,17 +13,17 @@ Jest Matchers to test generated templates.
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Installation
+## Installation
 
 This module is distributed via npm which is bundled with node and should be installed as one of your project's devDependencies:
 
-```
+```bash
 npm install --save-dev @scafflater/jest-scafflater
 ```
 
 or, for installation with yarn package manager.
 
-```
+```bash
 yarn add --dev @scafflater/jest-scafflater
 ```
 

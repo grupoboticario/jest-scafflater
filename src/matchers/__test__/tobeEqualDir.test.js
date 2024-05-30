@@ -38,7 +38,7 @@ describe("toBeEqualDir Tests", () => {
     // ASSERT
     expect(result.pass).toBe(false);
     expect(result.message()).toMatch(
-      /Different Content: \/subfolder\/test.yml/
+      /Different Content: \/subfolder\/test.yml/,
     );
   });
 
@@ -53,7 +53,7 @@ describe("toBeEqualDir Tests", () => {
     // ASSERT
     expect(result.pass).toBe(false);
     expect(result.message()).toMatch(
-      /Folder '\/subfolder' expected but not present in result/
+      /Folder '\/subfolder' expected but not present in result/,
     );
   });
 
@@ -68,7 +68,7 @@ describe("toBeEqualDir Tests", () => {
     // ASSERT
     expect(result.pass).toBe(false);
     expect(result.message()).toMatch(
-      /Folder '\/extra-folder' not expected to be in result/
+      /Folder '\/extra-folder' not expected to be in result/,
     );
   });
 
@@ -83,7 +83,7 @@ describe("toBeEqualDir Tests", () => {
     // ASSERT
     expect(result.pass).toBe(false);
     expect(result.message()).toMatch(
-      /File '\/file.txt' expected but not present in result/
+      /File '\/file.txt' expected but not present in result/,
     );
   });
 
@@ -98,7 +98,7 @@ describe("toBeEqualDir Tests", () => {
     // ASSERT
     expect(result.pass).toBe(false);
     expect(result.message()).toMatch(
-      /File '\/file2.txt' not expected to be in result/
+      /File '\/file2.txt' not expected to be in result/,
     );
   });
 });
