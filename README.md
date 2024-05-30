@@ -6,10 +6,10 @@ Jest Matchers to test generated templates.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Installation](#installation)
-  - [Usage](#usage)
-    - [With TypeScript](#with-typescript)
-  - [Custom matchers](#custom-matchers)
-    - [`toBeEqualDir`](#tobeequaldir)
+- [Usage](#usage)
+  - [With TypeScript](#with-typescript)
+- [Custom matchers](#custom-matchers)
+  - [`toBeEqualDir`](#tobeequaldir)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
