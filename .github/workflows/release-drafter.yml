@@ -14,38 +14,34 @@ jobs:
   update_release_draft:
     runs-on: ubuntu-latest
     steps:
-      - uses: release-drafter/release-drafter@v5
+      - name: Release Drafter
+        uses: release-drafter/release-drafter@v6
         id: release-drafter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup node 14.x
-        uses: actions/setup-node@v2.4.1
-        if: ${{ success() }}
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version-file: .nvmrc
 
-      - name: Setup npm
-        if: ${{ success() }}
-        run: npm install -g npm@7.19.0
-
-      - uses: actions/checkout@v2
-        if: ${{ success() }}
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Bumping package versions
-        if: ${{ success() && steps.release-drafter.outputs.tag_name != '' && !startsWith(steps.release-drafter.outputs.tag_name, 'untagged')}}
+        if: ${{ steps.release-drafter.outputs.tag_name != '' && !startsWith(steps.release-drafter.outputs.tag_name, 'untagged')}}
         run: |
           npm version ${{ steps.release-drafter.outputs.tag_name }} --no-git-tag-version
-        working-directory: ${{env.working-diretory}}
+        working-directory: ${{ env.working-diretory }}
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Pull Request
-        if: ${{ success() && steps.release-drafter.outputs.tag_name != '' && !startsWith(steps.release-drafter.outputs.tag_name, 'untagged')}}
-        uses: peter-evans/create-pull-request@v3
+        if: ${{ steps.release-drafter.outputs.tag_name != '' && !startsWith(steps.release-drafter.outputs.tag_name, 'untagged')}}
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "Changes to publish ${{ steps.release-drafter.outputs.tag_name }}"
           base: main
