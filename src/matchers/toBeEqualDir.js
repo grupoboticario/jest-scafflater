@@ -10,6 +10,12 @@ const RECEIVED_LABEL = "Received";
 const loadFormattedContent = (filePath) => {
   const fileContent = fs.readFileSync(filePath, "utf-8");
   try {
+    const fileExtension = path.extname(filePath);
+
+    if (fileExtension === ".txt") {
+      return fileContent;
+    }
+
     return prettier.format(fileContent, {
       filepath: filePath,
     });
@@ -37,13 +43,13 @@ const compareFiles = (diff) => {
     content1,
     EXPECTED_LABEL,
     RECEIVED_LABEL,
-    true
+    true,
   );
 
   return {
     message: () => `Different Content: ${path.join(
       diff.relativePath,
-      diff.name1
+      diff.name1,
     )}\n\n${stringDiff}
     `,
     pass: false,
@@ -64,7 +70,6 @@ const dirCompareOptions = {
 
 /**
  * Matcher to compare file and folder contents
- *
  * @param {string} received Path of the directory to compare
  * @param {string} expected Path of the directory with the expected content
  * @returns {object} Jest Matcher object
@@ -85,25 +90,25 @@ const toBeEqualDir = (received, expected) => {
   if (diff.type1 === "directory" && diff.type2 === "missing") {
     message = `Folder '${path.join(
       diff.relativePath,
-      diff.name1
+      diff.name1,
     )}' expected but not present in result`;
   }
   if (diff.type1 === "missing" && diff.type2 === "directory") {
     message = `Folder '${path.join(
       diff.relativePath,
-      diff.name2
+      diff.name2,
     )}' not expected to be in result`;
   }
   if (diff.type1 === "file" && diff.type2 === "missing") {
     message = `File '${path.join(
       diff.relativePath,
-      diff.name1
+      diff.name1,
     )}' expected but not present in result`;
   }
   if (diff.type1 === "missing" && diff.type2 === "file") {
     message = `File '${path.join(
       diff.relativePath,
-      diff.name2
+      diff.name2,
     )}' not expected to be in result`;
   }
   if (
