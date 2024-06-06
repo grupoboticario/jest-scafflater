@@ -6,17 +6,17 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: 'jest-scafflater'
-  description: 'Jest Matchers to test Scafflater results.'
+  name: jest-scafflater
+  description: Jest Matchers to test Scafflater results.
   tags:
-    - 'jest'
-    - 'scafflater'
+    - jest
+    - scafflater
   annotations:
-    github.com/project-slug: 'grupoboticario/jest-scafflater'
-    github.com/team-slug: 'grupoboticario/alquimia'
+    github.com/project-slug: grupoboticario/jest-scafflater
+    github.com/team-slug: grupoboticario/alquimia
 spec:
   type: service
-  lifecycle: 'production'
-  owner: 'alquimia'
-  system: 'alquimia'
-  domain: 'platform-engineering'
+  lifecycle: production
+  owner: alquimia
+  system: alquimia
+  domain: platform-engineering
