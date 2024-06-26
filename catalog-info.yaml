@@ -15,7 +15,7 @@ metadata:
     github.com/project-slug: grupoboticario/jest-scafflater
     github.com/team-slug: grupoboticario/alquimia
 spec:
-  type: service
+  type: library
   lifecycle: production
   owner: alquimia
   system: alquimia
